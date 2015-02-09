@@ -1,6 +1,8 @@
 <template name="option">
   <li>
-    <span class="text">{{value}}</span>
+    <span class="text">{{value}} <strong>({{score}})</strong></span>
+    <i class="fa fa-arrow-up upvote"></i>
+    <i class="fa fa-arrow-down downvote"></i>
     <i class="fa fa-times delete"></i>
   </li>
 </template>

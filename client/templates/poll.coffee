@@ -6,7 +6,7 @@ Template.poll.helpers
   title: ->
     @title
   options: ->
-    Options.find {pollId: @_id}
+    Options.find {pollId: @_id}, {sort: {score: -1}}
     
 Template.poll.events
   'keydown .title': (event) ->
@@ -15,6 +15,7 @@ Template.poll.events
       false
   'blur .title': (event) ->
     Polls.update @_id, $set: title: event.target.innerHTML
+    false
   'submit .new-option': (event) ->
     text = event.target.text.value
     Options.insert
