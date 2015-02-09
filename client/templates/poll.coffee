@@ -7,6 +7,8 @@ Template.poll.helpers
     @title
   options: ->
     Options.find {pollId: @_id}, {sort: {score: -1}}
+  getURL: ->
+    id: @url
     
 Template.poll.events
   'keydown .title': (event) ->
