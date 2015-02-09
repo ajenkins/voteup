@@ -1,3 +1,3 @@
 # VoteUp
 
-To run locally, enter `meteor`.
+To run locally, type `meteor` and go to `localhost:3000` with a browser.
