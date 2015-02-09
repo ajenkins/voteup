@@ -1,0 +1,11 @@
+<template name="poll">
+  <h1 class="title" contenteditable="true">{{title}}</h1>
+  <ol>
+    {{#each options}}
+      {{> option}}
+    {{/each}}
+  </ol>
+  <form class="new-option">
+    <input type="text" name="text" placeholder="Type to add a new option" />
+  </form>
+</template>
