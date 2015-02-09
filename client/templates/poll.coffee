@@ -14,7 +14,10 @@ Template.poll.events
       event.target.blur()
       false
   'blur .title': (event) ->
-    Polls.update @_id, $set: title: event.target.innerHTML
+    text = event.target.innerHTML
+    if text isnt @title
+      event.target.innerHTML = ''
+    Polls.update @_id, $set: title: text
     false
   'submit .new-option': (event) ->
     text = event.target.text.value
@@ -25,4 +28,3 @@ Template.poll.events
       createdAt: new Date
     event.target.text.value = ''
     false
-    
