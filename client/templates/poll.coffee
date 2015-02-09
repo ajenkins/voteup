@@ -19,14 +19,10 @@ Template.poll.events
     text = event.target.innerHTML
     if text isnt @title
       event.target.innerHTML = ''
-    Polls.update @_id, $set: title: text
+    Meteor.call 'updatePollTitle', @_id, text
     false
   'submit .new-option': (event) ->
     text = event.target.text.value
-    Options.insert
-      value: text
-      pollId: @_id
-      score: 0
-      createdAt: new Date
+    Meteor.call 'addOption', @_id, text
     event.target.text.value = ''
     false
