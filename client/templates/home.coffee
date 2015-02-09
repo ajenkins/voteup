@@ -4,9 +4,7 @@ Template.home.helpers
 
 Template.home.events
   'click .create-poll': (event) ->
-    random = Random.id 8
-    Polls.insert
-      title: 'Click to edit'
-      createdAt: new Date
-      url: random
-    Router.go 'poll.view', id: random
+    Meteor.call 'createPoll', 'untitled', (error, result) ->
+      if error
+        console.log error
+      Router.go 'poll.view', id: result
