@@ -1,12 +1,28 @@
 <template name="poll">
-  <p><a href="{{pathFor route='home'}}">Return to polls</a></p>
-  <h1 class="title" contenteditable="true">{{title}}</h1>
-  <ol>
-    {{#each options}}
-      {{> option}}
-    {{/each}}
-  </ol>
-  <form class="new-option">
-    <input type="text" name="text" placeholder="Type to add a new option" />
-  </form>
+  
+  <!-- <p><a href="{{pathFor route='home'}}">Return to polls</a></p> -->
+  
+  <div class="row poll-title">
+    <div class="small-12 columns">
+      <h1 class="title text-center" contenteditable="true">{{title}}</h1>
+    </div>
+  </div>
+  
+  <div class="row option-list">
+    <div class="small-12 medium-8 medium-centered columns">
+      <ol>
+        {{#each options}}
+          {{> option}}
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+  
+  <div class="row new-option-form">
+    <div class="small-12 medium-8 medium-centered columns">
+      <form class="new-option">
+        <input type="text" name="text" placeholder="Type to add a new option" />
+      </form>
+    </div>
+  </div>
 </template>
