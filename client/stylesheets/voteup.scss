@@ -1,0 +1,27 @@
+@import "client/stylesheets/_settings.scss";
+@import ".meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
+
+body {
+  background-color: #1abc9c;
+}
+
+.poll-title {
+  margin: 25px auto;
+}
+
+.title {
+  color: #ecf0f1;
+}
+
+.row .option-item {
+  background-color: #ecf0f1;
+  margin: 10px 0px;
+  padding: 10px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.score-buttons {
+  float: right;
+}

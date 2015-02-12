@@ -1,8 +1,15 @@
 <template name="option">
-  <li class="option-item">
-    <span class="text">{{value}} <strong>({{score}})</strong></span>
-    <i class="fa fa-arrow-up upvote"></i>
-    <i class="fa fa-arrow-down downvote"></i>
-    <i class="fa fa-times delete"></i>
-  </li>
+  <div class="row option-item">
+    <div class="small-9 columns">
+      <span class="text">{{value}}</span>
+    </div>
+    <div class="small-3 columns">
+      <span class="score-buttons">
+        <strong>({{score}})</strong>
+        <i class="fa fa-arrow-up upvote"></i>
+        <i class="fa fa-arrow-down downvote"></i>
+        <i class="fa fa-times delete"></i>
+      </span>
+    </div>
+  </div>
 </template>

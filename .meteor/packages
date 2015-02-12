@@ -6,8 +6,7 @@
 
 meteor-platform
 coffeescript
-stylus
-ewall:foundation
 fortawesome:fontawesome
 iron:router
 random
+matthew:foundation5-sass
