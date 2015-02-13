@@ -1,11 +1,11 @@
 <template name="poll">
-  <div class="row poll-title">
+  <div class="row" id="poll-title">
     <div class="small-12 columns">
-      <h1 class="title text-center" contenteditable="true">{{title}}</h1>
+      <h1 class="text-center" id="title-text" contenteditable="true">{{title}}</h1>
     </div>
   </div>
   
-  <div class="row option-list">
+  <div class="row" id="option-list">
     <div class="small-12 medium-8 medium-centered columns">
       {{#each options}}
         {{> option}}
@@ -13,10 +13,10 @@
     </div>
   </div>
   
-  <div class="row new-option-form">
+  <div class="row" id="new-option-row">
     <div class="small-12 medium-8 medium-centered columns">
-      <form class="new-option">
-        <input type="text" name="text" placeholder="Type to add a new option" />
+      <form id="new-option-form">
+        <input id="new-option-input" type="text" name="text" placeholder="Type to add a new option" />
       </form>
     </div>
   </div>

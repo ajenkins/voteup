@@ -633,7 +633,7 @@ $modules: () !default;
 // $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
-// $input-border-style: solid;
+$input-border-style: none;
 // $input-border-width: 1px;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: #ddd;
@@ -1294,7 +1294,7 @@ $topbar-bg-color: #16a085;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: $font-weight-normal;
+$topbar-title-weight: 600;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
@@ -1311,7 +1311,7 @@ $topbar-dropdown-bg: #16a085;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
-// $topbar-link-weight: $font-weight-normal;
+$topbar-link-weight: 200;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
