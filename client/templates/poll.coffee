@@ -11,17 +11,17 @@ Template.poll.helpers
     id: @url
     
 Template.poll.events
-  'keydown .title': (event) ->
+  'keydown #title-text': (event) ->
     if event.keyCode is 13
       event.target.blur()
       false
-  'blur .title': (event) ->
+  'blur #title-text': (event) ->
     text = event.target.innerHTML
     if text isnt @title
       event.target.innerHTML = ''
     Meteor.call 'updatePollTitle', @_id, text
     false
-  'submit .new-option': (event) ->
+  'submit #new-option-form': (event) ->
     text = event.target.text.value
     Meteor.call 'addOption', @_id, text
     event.target.text.value = ''
