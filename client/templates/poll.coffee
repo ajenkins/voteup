@@ -6,7 +6,7 @@ Template.poll.helpers
   title: ->
     @title
   options: ->
-    Options.find pollId: @_id, {sort: score: -1, createdAt: 1}
+    Options.find pollId: @_id, {sort: score: -1, prevPosition: 1}
   getURL: ->
     id: @url
 

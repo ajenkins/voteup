@@ -11,11 +11,13 @@ Meteor.methods
   updatePollTitle: (pollId, newTitle) ->
     Polls.update pollId, $set: title: newTitle
   addOption: (pollId, text) ->
+    numOptions = Options.find(pollId: pollId).count()
     Options.insert
       value: text
       pollId: pollId
       score: 0
       createdAt: new Date
+      prevPosition: numOptions
   removeOption: (optionId) ->
     Options.remove optionId
   increaseScoreBy: (optionId, increaseBy) ->
