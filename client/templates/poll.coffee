@@ -6,10 +6,10 @@ Template.poll.helpers
   title: ->
     @title
   options: ->
-    Options.find pollId: @_id, {sort: score: -1, _id: 1}
+    Options.find pollId: @_id, {sort: score: -1, createdAt: 1}
   getURL: ->
     id: @url
-    
+
 Template.poll.events
   'keydown #title-text': (event) ->
     if event.keyCode is 13
