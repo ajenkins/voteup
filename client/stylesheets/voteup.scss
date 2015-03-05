@@ -42,3 +42,11 @@ body {
 #new-option-input {
   padding: 20px 35px;
 }
+
+.upvote, .downvote {
+  opacity: 0.4;
+}
+
+.active.upvote, .active.downvote {
+  opacity: 1.0;
+}
