@@ -36,3 +36,6 @@ Meteor.methods
     pollOptions = Options.find pollId: poll._id, {sort: score: -1, prevPosition: 1}
     pollOptions.forEach (pollOption, index) ->
       Options.update pollOption, $set: prevPosition: index
+
+  addParticipant: (pollId, userId) ->
+    Polls.update pollId, $addToSet: participants: userId
