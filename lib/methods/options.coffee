@@ -1,20 +1,4 @@
 Meteor.methods
-  createPoll: (title = 'Click to edit') ->
-    random = Random.id 8
-    Polls.insert
-      title: title
-      createdAt: new Date
-      url: random
-      creator: Meteor.userId()
-      participants: [Meteor.userId()]
-    random
-
-  deletePoll: (pollId) ->
-    Polls.remove pollId
-
-  updatePollTitle: (pollId, newTitle) ->
-    Polls.update pollId, $set: title: newTitle
-
   addOption: (pollId, text) ->
     numOptions = Options.find(pollId: pollId).count()
     Options.insert
@@ -37,12 +21,10 @@ Meteor.methods
     pollOptions.forEach (pollOption, index) ->
       Options.update pollOption, $set: prevPosition: index
 
-  addParticipant: (pollId, userId) ->
-    Polls.update pollId, $addToSet: participants: userId
-
   addVotes: (pollId, userId) ->
     pollOptions = Options.find pollId: pollId
     pollOptions.forEach (pollOption) ->
       vote = Session.get pollOption._id
-      if vote
-        Options.update pollOption, $set: {('votes.' + userId): vote}
+      if vote?
+        console.log 'hi'
+        # Options.update pollOption, $set: {('votes.' + userId): vote}
