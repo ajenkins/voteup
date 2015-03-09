@@ -39,3 +39,10 @@ Meteor.methods
 
   addParticipant: (pollId, userId) ->
     Polls.update pollId, $addToSet: participants: userId
+
+  addVotes: (pollId, userId) ->
+    pollOptions = Options.find pollId: pollId
+    pollOptions.forEach (pollOption) ->
+      vote = Session.get pollOption._id
+      if vote
+        Options.update pollOption, $set: {('votes.' + userId): vote}
