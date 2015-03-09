@@ -5,6 +5,8 @@ Meteor.methods
       title: title
       createdAt: new Date
       url: random
+      creator: Meteor.userId()
+      participants: [Meteor.userId()]
     random
 
   deletePoll: (pollId) ->
