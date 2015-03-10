@@ -6,4 +6,5 @@ Tracker.autorun ->
     Meteor.call 'addParticipant', pollId, Meteor.userId()
 
     # When a user logs in, add their existing votes to the options of the current poll
-    Meteor.call 'addVotes', pollId, Meteor.userId()
+    votes = getVotesforPoll(pollId)
+    Meteor.call 'addVotes', pollId, Meteor.userId(), votes

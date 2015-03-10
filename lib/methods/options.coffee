@@ -21,13 +21,11 @@ Meteor.methods
     pollOptions.forEach (pollOption, index) ->
       Options.update pollOption, $set: prevPosition: index
 
-  addVotes: (pollId, userId) ->
+  addVotes: (pollId, userId, votes) ->
     pollOptions = Options.find pollId: pollId
     pollOptions.forEach (pollOption) ->
-      vote = Session.get pollOption._id
+      vote = votes[pollOption._id]
       if vote?
-        pollOption.votes or= []
-        userVote = {}
-        userVote[userId] = vote
-        pollOption.votes.push userVote
+        pollOption.votes or= {}
+        pollOption.votes[userId] = vote
         Options.update pollOption, $set: votes: pollOption.votes
