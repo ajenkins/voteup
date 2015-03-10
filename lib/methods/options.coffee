@@ -26,5 +26,8 @@ Meteor.methods
     pollOptions.forEach (pollOption) ->
       vote = Session.get pollOption._id
       if vote?
-        console.log 'hi'
-        # Options.update pollOption, $set: {('votes.' + userId): vote}
+        pollOption.votes or= []
+        userVote = {}
+        userVote[userId] = vote
+        pollOption.votes.push userVote
+        Options.update pollOption, $set: votes: pollOption.votes
