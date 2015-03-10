@@ -7,6 +7,7 @@ Meteor.methods
       score: 0
       createdAt: new Date
       prevPosition: numOptions
+      votes: {}
 
   removeOption: (optionId) ->
     Options.remove optionId
@@ -19,7 +20,7 @@ Meteor.methods
     poll = Polls.findOne option.pollId
     pollOptions = Options.find pollId: poll._id, {sort: score: -1, prevPosition: 1}
     pollOptions.forEach (pollOption, index) ->
-      Options.update pollOption, $set: prevPosition: index
+      Options.update pollOption._id, $set: prevPosition: index
 
   addVotes: (pollId, userId, votes) ->
     pollOptions = Options.find pollId: pollId
@@ -28,4 +29,4 @@ Meteor.methods
       if vote?
         pollOption.votes or= {}
         pollOption.votes[userId] = vote
-        Options.update pollOption, $set: votes: pollOption.votes
+        Options.update pollOption._id, $set: votes: pollOption.votes
