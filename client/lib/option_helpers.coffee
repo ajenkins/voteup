@@ -29,12 +29,12 @@
       Meteor.call 'deleteVoteforUser', optionId, Meteor.userId()
     else
       Meteor.call 'updateVoteforUser', optionId, Meteor.userId(), 'down'
-  if Session.equals @_id, 'down'
-    Session.clear @_id
-    Meteor.call 'increaseScoreBy', @_id, 1
-  else if Session.equals @_id, 'up'
-    Session.setPersistent @_id, 'down'
-    Meteor.call 'increaseScoreBy', @_id, -2
+  if Session.equals optionId, 'down'
+    Session.clear optionId
+    Meteor.call 'increaseScoreBy', optionId, 1
+  else if Session.equals optionId, 'up'
+    Session.setPersistent optionId, 'down'
+    Meteor.call 'increaseScoreBy', optionId, -2
   else
-    Session.setPersistent @_id, 'down'
-    Meteor.call 'increaseScoreBy', @_id, -1
+    Session.setPersistent optionId, 'down'
+    Meteor.call 'increaseScoreBy', optionId, -1
