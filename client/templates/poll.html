@@ -4,7 +4,7 @@
       <h1 class="text-center" id="title-text" contenteditable="true">{{title}}</h1>
     </div>
   </div>
-  
+
   <div class="row" id="option-list">
     <div class="small-12 medium-8 medium-centered columns">
       {{#each options}}
@@ -12,10 +12,10 @@
       {{/each}}
     </div>
   </div>
-  
+
   <div class="row" id="new-option-row">
     <div class="small-12 medium-8 medium-centered columns">
-      <form id="new-option-form">
+      <form id="new-option-form" autocomplete="off">
         <input id="new-option-input" type="text" name="text" placeholder="Type to add a new option" />
       </form>
     </div>
