@@ -9,6 +9,8 @@ Template.poll.helpers
     Options.find pollId: @_id, {sort: score: -1, prevPosition: 1}
   getURL: ->
     id: @url
+  canEditTitle: ->
+    @creator is Meteor.userId()
 
 Template.poll.events
   'keydown #title-text': (event) ->
