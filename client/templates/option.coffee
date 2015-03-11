@@ -1,10 +1,13 @@
 Template.option.helpers
   upvoted: ->
-    if voteStatus(@_id) is 'up'
+    if voteState(@_id) is 'up'
       'active'
   downvoted: ->
-    if voteStatus(@_id) is 'down'
+    if voteState(@_id) is 'down'
       'active'
+  canDelete: ->
+    poll = Polls.findOne @pollId
+    Meteor.userId() is poll.creator
 
 Template.option.events
   'click .delete': (event) ->

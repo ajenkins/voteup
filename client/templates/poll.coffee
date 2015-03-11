@@ -10,7 +10,7 @@ Template.poll.helpers
   getURL: ->
     id: @url
   canEditTitle: ->
-    @creator is Meteor.userId()
+    Meteor.userId() is @creator
 
 Template.poll.events
   'keydown #title-text': (event) ->

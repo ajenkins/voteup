@@ -1,4 +1,4 @@
-@voteStatus = (optionId) ->
+@voteState = (optionId) ->
   if Meteor.userId()
     option = Options.findOne optionId
     option.votes[Meteor.userId()]
