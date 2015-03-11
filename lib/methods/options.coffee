@@ -30,3 +30,13 @@ Meteor.methods
         pollOption.votes or= {}
         pollOption.votes[userId] = vote
         Options.update pollOption._id, $set: votes: pollOption.votes
+
+  deleteVoteforUser: (optionId, userId) ->
+    option = Options.findOne optionId
+    delete option.votes[userId]
+    Options.update optionId, $set: votes: option.votes
+
+  updateVoteforUser: (optionId, userId, vote) ->
+    option = Options.findOne optionId
+    option.votes[userId] = vote
+    Options.update optionId, $set: votes: option.votes
