@@ -8,7 +8,7 @@
         <strong>({{score}})</strong>
         <i class="fa fa-arrow-up upvote {{upvoted}}"></i>
         <i class="fa fa-arrow-down downvote {{downvoted}}"></i>
-        <i class="fa fa-times delete"></i>
+        {{#if canDelete}}<i class="fa fa-times delete"></i>{{/if}}
       </span>
     </div>
   </div>
