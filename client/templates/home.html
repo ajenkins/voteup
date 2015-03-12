@@ -1,9 +1,14 @@
 <template name="home">
-  <h1>VoteUp</h1>
-  <ul>
-    {{#each polls}}
-      <li><a href="/polls/{{url}}">{{title}}</a></li>
-    {{/each}}
-  </ul>
-  <button class="create-poll">Create a Poll</button>
+  {{#if currentUser}}
+    <ul>
+      {{#each polls}}
+        <li><a href="/polls/{{url}}">{{title}}</a></li>
+      {{/each}}
+    </ul>
+    <button class="create-poll">Create a Poll</button>
+  {{else}}
+    <div id="login-home">
+      {{> loginButtons}}
+    </div>
+  {{/if}}
 </template>

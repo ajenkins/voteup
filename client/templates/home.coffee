@@ -8,3 +8,9 @@ Template.home.events
       if error
         console.log error
       Router.go 'poll.view', id: result
+
+Template.home.rendered = ->
+  Accounts._loginButtonsSession.set 'dropdownVisible', true
+
+# Template.login.rendered = ->
+#   Accounts._loginButtonsSession.set 'dropdownVisible', true

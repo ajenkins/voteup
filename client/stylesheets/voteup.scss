@@ -1,8 +1,14 @@
 @import "client/stylesheets/_settings.scss";
 @import ".meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
 
+// Colors from flatuicolors.com
+$midnight-blue: #2c3e50;
+$clouds: #ecf0f1;
+$turquoise: #1abc9c;
+$green-sea: #16a085;
+
 body {
-  background-color: #1abc9c;
+  background-color: $turquoise;
 }
 
 #poll-title {
@@ -10,15 +16,15 @@ body {
 }
 
 #title-text {
-  color: #ecf0f1;
+  color: $clouds;
   font-weight: 100;
   font-size: 72px;
   @media #{$small-only} { font-size: 36px; }
 }
 
 .row .option-item {
-  background-color: #ecf0f1;
-  color: #2c3e50;
+  background-color: $clouds;
+  color: $midnight-blue;
   margin: 10px 0px;
   padding: 10px 20px;
   -webkit-border-radius: 5px;
@@ -49,4 +55,22 @@ body {
 
 .active.upvote, .active.downvote {
   opacity: 1.0;
+}
+
+#login-buttons a {
+  color: $midnight-blue;
+}
+
+#login-home a.login-close-text, #login-home a.login-link-text {
+  display: none;
+}
+
+#login-home .accounts-dialog {
+  $width: 90%;
+  width: $width;
+  height: 200px;
+  position: fixed;
+  left: 50%;
+  margin-top: 60px;
+  margin-left: -$width/2;
 }
