@@ -12,6 +12,9 @@ Template.home.events
       if error
         console.log error
       Router.go 'poll.view', id: result
+  'click .delete': (event) ->
+    Meteor.call 'deletePoll', event.target.dataset.pollId
+    false
 
 Template.home.rendered = ->
   Accounts._loginButtonsSession.set 'dropdownVisible', true
