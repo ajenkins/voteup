@@ -1,18 +1,23 @@
 <template name="home">
-  {{#if currentUser}}
-    <ul>
-      {{#each polls}}
-        <li><a href="/polls/{{url}}">{{title}}</a></li>
-      {{/each}}
-    </ul>
-  {{/if}}
   <div id="create-poll">
     <button class="button radius" id="create-poll-btn">Create a Poll</button>
   </div>
-  {{#unless currentUser}}
+  {{#if currentUser}}
+    <div class="row item-list home">
+      <div class="small-12 medium-8 medium-centered columns">
+        {{#each polls}}
+          <a href="/polls/{{url}}">
+            <div class="row item btn">
+              <span class="link">{{title}}</span>
+            </div>
+          </a>
+        {{/each}}
+      </div>
+    </div>
+  {{else}}
     <p id="create-poll-or-login">or</p>
     <div id="login-home">
       {{> loginButtons}}
     </div>
-  {{/unless}}
+  {{/if}}
 </template>

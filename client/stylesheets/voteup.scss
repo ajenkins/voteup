@@ -4,6 +4,8 @@
 // Colors from flatuicolors.com
 $midnight-blue: #2c3e50;
 $clouds: #ecf0f1;
+$clouds-dark: #d4d8d9;
+$silver: #bdc3c7;
 $turquoise: #1abc9c;
 $green-sea: #16a085;
 
@@ -22,7 +24,7 @@ body {
   @media #{$small-only} { font-size: 36px; }
 }
 
-.row .option-item {
+.row.item {
   background-color: $clouds;
   color: $midnight-blue;
   margin: 10px 0px;
@@ -30,6 +32,9 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  &.btn:hover {
+    background-color: $clouds-dark;
+  }
 }
 
 .score-buttons {
@@ -84,4 +89,8 @@ body {
 p#create-poll-or-login {
   text-align: center;
   color: $clouds;
+}
+
+.link {
+  color: $primary-color;
 }
