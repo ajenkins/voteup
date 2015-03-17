@@ -9,7 +9,7 @@ Template.poll.helpers
     Options.find pollId: @_id, {sort: score: -1, prevPosition: 1}
   getURL: ->
     id: @url
-  canEditTitle: ->
+  isCreator: ->
     Meteor.userId() is @creator
 
 Template.poll.events

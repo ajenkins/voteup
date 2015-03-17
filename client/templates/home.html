@@ -8,7 +8,10 @@
         {{#each polls}}
           <a href="/polls/{{url}}">
             <div class="row item btn">
-              <span class="link">{{title}}</span>
+              <span class="link left">{{title}}</span>
+              {{#if isPollCreator pollId=_id}}
+                <span class="badge right">OWNER</span>
+              {{/if}}
             </div>
           </a>
         {{/each}}

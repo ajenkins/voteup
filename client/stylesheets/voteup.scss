@@ -94,3 +94,13 @@ p#create-poll-or-login {
 .link {
   color: $primary-color;
 }
+
+.badge {
+  background-color: $midnight-blue;
+  color: $clouds;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 5px;
+}
