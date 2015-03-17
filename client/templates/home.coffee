@@ -3,7 +3,7 @@ Template.home.helpers
     Polls.find {}
 
 Template.home.events
-  'click .create-poll': (event) ->
+  'click .create-poll-btn': (event) ->
     Meteor.call 'createPoll', (error, result) ->
       if error
         console.log error

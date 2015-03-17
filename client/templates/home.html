@@ -5,10 +5,14 @@
         <li><a href="/polls/{{url}}">{{title}}</a></li>
       {{/each}}
     </ul>
-    <button class="create-poll">Create a Poll</button>
-  {{else}}
+  {{/if}}
+  <div id="create-poll">
+    <button class="button radius" id="create-poll-btn">Create a Poll</button>
+  </div>
+  {{#unless currentUser}}
+    <p id="create-poll-or-login">or</p>
     <div id="login-home">
       {{> loginButtons}}
     </div>
-  {{/if}}
+  {{/unless}}
 </template>
