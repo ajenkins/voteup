@@ -61,20 +61,16 @@ body {
   color: $midnight-blue;
 }
 
+#login-home {
+  text-align: center;
+}
+
 #login-home a.login-close-text, #login-home a.login-link-text {
   display: none;
 }
 
 #login-home .accounts-dialog {
-  $width: 90%;
-  width: $width;
-  height: 200px;
-  position: fixed;
-  left: 50%;
-  margin-top: 60px;
-  margin-left: -$width/2;
-  @media #{$medium-up} {
-    width: 300px;
-    margin-left: -150px;
-  }
+  position: relative;
+  height: 205px;
+  margin-top: 20px;
 }

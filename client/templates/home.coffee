@@ -11,6 +11,3 @@ Template.home.events
 
 Template.home.rendered = ->
   Accounts._loginButtonsSession.set 'dropdownVisible', true
-
-# Template.login.rendered = ->
-#   Accounts._loginButtonsSession.set 'dropdownVisible', true
