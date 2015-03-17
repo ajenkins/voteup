@@ -5,7 +5,7 @@ Template.option.helpers
   downvoted: ->
     if voteState(@_id) is 'down'
       'active'
-  canDelete: ->
+  isCreator: ->
     poll = Polls.findOne @pollId
     Meteor.userId() is poll.creator
 
