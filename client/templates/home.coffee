@@ -1,6 +1,6 @@
 Template.home.helpers
   polls: ->
-    Polls.find {}
+    Polls.find participants: Meteor.userId(), {sort: createdAt: -1}
 
 Template.home.events
   'click #create-poll-btn': (event) ->
