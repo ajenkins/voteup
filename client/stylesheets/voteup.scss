@@ -73,4 +73,8 @@ body {
   left: 50%;
   margin-top: 60px;
   margin-left: -$width/2;
+  @media #{$medium-up} {
+    width: 300px;
+    margin-left: -150px;
+  }
 }
