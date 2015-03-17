@@ -10,7 +10,10 @@
             <div class="row item btn">
               <span class="link left">{{title}}</span>
               {{#if isPollCreator pollId=_id}}
-                <span class="badge right">OWNER</span>
+                <span class="right">
+                  <span class="badge">OWNER</span>
+                  <i class="fa fa-times icon-btn delete"></i>
+                </span>
               {{/if}}
             </div>
           </a>

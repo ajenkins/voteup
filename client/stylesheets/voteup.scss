@@ -56,10 +56,24 @@ body {
 
 .upvote, .downvote {
   opacity: 0.4;
+  &:hover {
+    opacity: 1.0;
+  }
 }
 
 .active.upvote, .active.downvote {
   opacity: 1.0;
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
+.icon-btn {
+  opacity: 0.4;
+  &:hover {
+    cursor: pointer;
+    opacity: 1.0;
+  }
 }
 
 #login-buttons a {
