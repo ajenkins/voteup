@@ -13,8 +13,12 @@ Template.home.events
         console.log error
       Router.go 'poll.view', id: result
   'click .delete': (event) ->
-    Meteor.call 'deletePoll', event.target.dataset.pollId
-    false
+    pollId = event.target.parentElement.dataset.pollId
+    $('#delete-poll-modal').data('pollId', pollId)
+  'click .delete-confirmation': (event) ->
+    pollId = $('#delete-poll-modal').data('pollId')
+    Meteor.call 'deletePoll', pollId
+    $('#delete-poll-modal').foundation('reveal', 'close');
 
 Template.home.rendered = ->
   Accounts._loginButtonsSession.set 'dropdownVisible', true
