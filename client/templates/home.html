@@ -1,7 +1,10 @@
 <template name="home">
+  {{> navbar}}
+
   <div id="create-poll">
     <button class="button radius" id="create-poll-btn">Create a Poll</button>
   </div>
+
   {{#if currentUser}}
     <div class="row item-list home">
       <div class="small-12 medium-8 medium-centered columns">
