@@ -4,11 +4,17 @@
       <li class="name">
         <h1><a href="{{pathFor route='home'}}">VoteUp</a></h1>
       </li>
-      <li class="toggle-topbar menu-icon"><a href><span></span></a></li>
+      {{#if showMenuIcon}}
+        <li class="toggle-topbar menu-icon"><a href><span></span></a></li>
+      {{/if}}
     </ul>
     <section class="top-bar-section">
       <ul class="left">
-        <li><a href="{{pathFor route='home'}}">Return to polls</a></li>
+        {{#if currentUser}}
+          {{#if pageIsPoll}}
+            <li><a href="{{pathFor route='home'}}">Return to polls</a></li>
+          {{/if}}
+        {{/if}}
       </ul>
       <ul class="right">
         {{#if currentUser}}
