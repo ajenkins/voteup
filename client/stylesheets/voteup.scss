@@ -119,3 +119,7 @@ p#create-poll-or-login {
   padding: 5px;
   border-radius: 5px;
 }
+
+.top-bar.expanded .toggle-topbar a span::after {
+  box-shadow: 0 0px 0 1px white, 0 7px 0 1px white, 0 14px 0 1px white;
+}
