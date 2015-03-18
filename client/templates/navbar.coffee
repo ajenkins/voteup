@@ -5,3 +5,7 @@ Template.navbar.helpers
   pageIsPoll: ->
     data = Template.currentData()
     data.page is 'poll' if data
+
+Template.navbar.events
+  'click #sign-out': (event) ->
+    Meteor.logout()
