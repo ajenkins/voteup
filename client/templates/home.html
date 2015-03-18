@@ -25,12 +25,13 @@
         {{/each}}
       </div>
     </div>
-  {{else}}
+  {{/if}}
+  {{#unless currentUser}}
     <p id="create-poll-or-login">or</p>
     <div id="login-home">
       {{> loginButtons}}
     </div>
-  {{/if}}
+  {{/unless}}
 
   <div id="delete-poll-modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <h2>Are you sure you want to delete this poll?</h2>

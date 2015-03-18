@@ -11,8 +11,8 @@
         <li><a href="{{pathFor route='home'}}">Return to polls</a></li>
       </ul>
       <ul class="right">
-        {{#if currentUser and pageIsHome}}
-          <li><a href="#" id="sign-out">Sign Out</a></li>
+        {{#if currentUser}}
+          <li><a href="{{pathFor route='home'}}" id="sign-out">Sign Out</a></li>
         {{/if}}
       </ul>
     </section>
