@@ -1,19 +1,4 @@
 <body>
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="{{pathFor route='home'}}">VoteUp</a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href><span></span></a></li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="left">
-        <li><a href="{{pathFor route='home'}}">Return to polls</a></li>
-      </ul>
-      <ul class="right">
-        <!-- <li>{{> loginButtons align="right"}}</li> -->
-      </ul>
-    </section>
-  </nav>
+  {{> navbar}}
   {{initFoundation}}
 </body>
