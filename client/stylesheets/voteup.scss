@@ -9,22 +9,41 @@ $silver: #bdc3c7;
 $turquoise: #1abc9c;
 $green-sea: #16a085;
 
+// Other variables
+$footer-height: 50px;
+
 html {
-    position: relative;
-    min-height: 100%;
+	position: relative;
+	min-height: 100%;
+  height: auto;
 }
 
 body {
   background-color: $turquoise;
+  margin-bottom: $footer-height;
+  padding-bottom: 25px;
+  position: static;
+  height: 100%;
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 50px;
-  width: 100%;
-  background-color: #157773;
+	background-color: black;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: $footer-height;
+	width: 100%;
+  overflow: hidden;
+}
+
+#footer-text {
+  color: $clouds;
+  margin-top: 10px;
+}
+
+#footer-text a {
+  color: $clouds;
+  text-decoration: underline;
 }
 
 #poll-title {
