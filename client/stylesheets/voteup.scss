@@ -9,8 +9,22 @@ $silver: #bdc3c7;
 $turquoise: #1abc9c;
 $green-sea: #16a085;
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
   background-color: $turquoise;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #157773;
 }
 
 #poll-title {
