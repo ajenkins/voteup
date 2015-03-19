@@ -9,9 +9,6 @@ $silver: #bdc3c7;
 $turquoise: #1abc9c;
 $green-sea: #16a085;
 
-// Other variables
-$footer-height: 50px;
-
 html {
 	position: relative;
 	min-height: 100%;
@@ -20,25 +17,23 @@ html {
 
 body {
   background-color: $turquoise;
-  margin-bottom: $footer-height;
-  padding-bottom: 25px;
+  padding-bottom: 100px;
   position: static;
   height: 100%;
 }
 
 footer {
-	background-color: black;
+	background-color: #2C4C50;
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	height: $footer-height;
 	width: 100%;
   overflow: hidden;
 }
 
 #footer-text {
   color: $clouds;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 #footer-text a {
