@@ -28,9 +28,7 @@
   {{/if}}
   {{#unless currentUser}}
     <p id="create-poll-or-login">or</p>
-    <div id="login-home">
-      {{> loginButtons}}
-    </div>
+    {{> signIn}}
   {{/unless}}
 
   <div id="delete-poll-modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
@@ -42,6 +40,6 @@
     <a href="#" class="button delete-confirmation">Yes, delete this poll</a>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
-  
+
   {{> footer}}
 </template>
