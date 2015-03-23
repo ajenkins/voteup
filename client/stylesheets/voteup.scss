@@ -128,3 +128,16 @@ p#create-poll-or-login {
 .top-bar.expanded .toggle-topbar a span::after {
   box-shadow: 0 0px 0 1px white, 0 7px 0 1px white, 0 14px 0 1px white;
 }
+
+.sign-in-box {
+	font-size: 16px;
+	font-weight: 500;
+	color: $midnight-blue;
+	label {
+		@extend .sign-in-box;
+	}
+	a {
+		@extend .sign-in-box;
+		text-decoration: underline;
+	}
+}
