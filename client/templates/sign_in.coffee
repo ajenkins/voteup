@@ -8,12 +8,12 @@ Template.signIn.helpers
     Session.equals 'accountsUI', 'forgotPassword'
 
 Template.signIn.events
-  'click #forgot-passwd-link': (event) ->
-    Session.set 'accountsUI', 'forgotPassword'
+  'click #sign-in-link': (event) ->
+    Session.set 'accountsUI', 'signIn'
     false
   'click #create-account-link': (event) ->
     Session.set 'accountsUI', 'createAccount'
     false
-  'click #sign-in-link': (event) ->
-    Session.set 'accountsUI', 'signIn'
+  'click #forgot-passwd-link': (event) ->
+    Session.set 'accountsUI', 'forgotPassword'
     false
