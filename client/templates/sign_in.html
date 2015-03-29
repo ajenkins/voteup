@@ -21,8 +21,15 @@
 
         <div class="row">
           <div class="small-12 columns">
-            <input class="button expand" type="submit" value="Sign In" />
-            <!-- <a role="button" aria-label="submit form" href="#" class="button">Submit</a> -->
+            {{#if signInUI}}
+              <input class="button expand" id="sign-in-btn" type="submit" value="Sign In" />
+            {{/if}}
+            {{#if createAccountUI}}
+              <input class="button expand" id="create-account-btn" type="submit" value="Create Account" />
+            {{/if}}
+            {{#if forgotPasswordUI}}
+              <input class="button expand" id="reset-passwd-btn" type="submit" value="Reset Password" />
+            {{/if}}
           </div>
         </div>
 
