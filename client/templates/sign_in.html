@@ -11,13 +11,15 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="small-12 columns">
-            <label>Password
-              <input type="password" />
-            </label>
+        {{#unless forgotPasswordUI}}
+          <div class="row">
+            <div class="small-12 columns">
+              <label>Password
+                <input type="password" />
+              </label>
+            </div>
           </div>
-        </div>
+        {{/unless}}
 
         <div class="row">
           <div class="small-12 columns">
@@ -35,10 +37,16 @@
 
         <div class="row">
           <div class="small-6 columns text-left">
-            <a href="#">Forgot password</a>
+            {{#if signInUI}}
+              <a id="forgot-passwd-link" href="#">Forgot password</a>
+            {{/if}}
           </div>
           <div class="small-6 columns text-right">
-            <a href="#">Create Account</a>
+            {{#if signInUI}}
+              <a id="create-account-link" href="#">Create Account</a>
+            {{else}}
+              <a id="sign-in-link" href="#">Sign In</a>
+            {{/if}}
           </div>
         </div>
       </form>
