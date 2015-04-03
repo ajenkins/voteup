@@ -2,38 +2,56 @@
   <div class="row sign-in-box">
     <div class="small-12 medium-4 medium-centered columns">
 
-      <form>
-        <div class="row">
-          <div class="small-12 columns">
-            <label>Email Address
-              <input type="email" />
-            </label>
-          </div>
-        </div>
-
-        {{#unless forgotPasswordUI}}
+      {{#if resetPasswordUI}}
+        {{> resetPassword}}
+      {{else}}
+        <form id="accounts-form" method="POST">
           <div class="row">
             <div class="small-12 columns">
-              <label>Password
-                <input type="password" />
+              <label>Email Address
+                <input type="email" name="email" />
               </label>
+              {{#if forgotPasswordUI}}
+                {{#if errorMessage}}
+                  <small class="error">{{errorMessage}}</small>
+                {{/if}}
+                {{#if successMessage}}
+                  <div data-alert class="alert-box info">
+                    {{successMessage}}
+                    <a href="#" class="close">&times;</a>
+                  </div>
+                {{/if}}
+              {{/if}}
             </div>
           </div>
-        {{/unless}}
 
-        <div class="row">
-          <div class="small-12 columns">
-            {{#if signInUI}}
-              <input class="button radius expand" id="sign-in-btn" type="submit" value="Sign In" />
-            {{/if}}
-            {{#if createAccountUI}}
-              <input class="button radius expand" id="create-account-btn" type="submit" value="Create Account" />
-            {{/if}}
-            {{#if forgotPasswordUI}}
-              <input class="button radius expand" id="reset-passwd-btn" type="submit" value="Reset Password" />
-            {{/if}}
+          {{#unless forgotPasswordUI}}
+            <div class="row">
+              <div class="small-12 columns">
+                <label>Password
+                  <input type="password" name="password" />
+                </label>
+                {{#if errorMessage}}
+                  <small class="error">{{errorMessage}}</small>
+                {{/if}}
+              </div>
+            </div>
+          {{/unless}}
+
+          <div class="row">
+            <div class="small-12 columns">
+              {{#if signInUI}}
+                <input class="button radius expand" id="sign-in-btn" type="submit" value="Sign In" />
+              {{/if}}
+              {{#if createAccountUI}}
+                <input class="button radius expand" id="create-account-btn" type="submit" value="Create Account" />
+              {{/if}}
+              {{#if forgotPasswordUI}}
+                <input class="button radius expand" id="reset-passwd-btn" type="submit" value="Reset Password" />
+              {{/if}}
+            </div>
           </div>
-        </div>
+        </form>
 
         <div class="row">
           <div class="small-6 columns text-left">
@@ -49,7 +67,7 @@
             {{/if}}
           </div>
         </div>
-      </form>
+      {{/if}}
 
     </div>
   </div>
