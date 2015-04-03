@@ -57,8 +57,6 @@ footer {
   color: $midnight-blue;
   margin: 10px 0px;
   padding: 10px 20px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   &.btn:hover {
     background-color: $clouds-dark;
@@ -68,10 +66,7 @@ footer {
 .score-buttons {
   float: right;
   @media #{$small-only} { letter-spacing: 2px; }
-  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-  -moz-user-select: none; /* mozilla browsers */
-  -khtml-user-select: none; /* webkit (konqueror) browsers */
-  -ms-user-select: none; /* IE10+ */
+	user-select: none;
 }
 
 .row #new-option-form {
