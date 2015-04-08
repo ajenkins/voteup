@@ -7,7 +7,10 @@ Template.option.helpers
       'active'
   isCreator: ->
     poll = Polls.findOne @pollId
-    Meteor.userId() is poll.creator
+    if poll.creator
+      Meteor.userId() is poll.creator
+    else
+      false
 
 Template.option.events
   'click .delete': (event) ->
