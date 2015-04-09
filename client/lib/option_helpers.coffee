@@ -1,7 +1,10 @@
 @voteState = (optionId) ->
   if Meteor.userId()
     option = Options.findOne optionId
-    option.votes[Meteor.userId()]
+    if option.votes
+      option.votes[Meteor.userId()]
+    else
+      undefined
   else
     Session.get optionId
 
