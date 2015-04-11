@@ -21,14 +21,4 @@ Momentum.registerPlugin 'slide-nice', (options) ->
         complete: ->
           $node.remove()
           done()
-    moveElement: (node, next, done) ->
-      $node = $(node)
-      $node.animate({
-        height: 'toggle'
-        opacity: 'toggle'
-      }, 'slow').promise().done ->
-        $node.insertBefore(next).animate {
-          height: 'toggle'
-          opacity: 'toggle'
-        }, 'slow'
   }
