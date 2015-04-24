@@ -21,3 +21,10 @@ Template.option.events
 
   'click .downvote': (event) ->
     downVote @_id
+
+Template.option.rendered = ->
+  $('.hidden').velocity 'slideDown',
+    duration: 1000
+    easing: 'easeOutQuint'
+    complete: (elements) ->
+      console.log 'element'

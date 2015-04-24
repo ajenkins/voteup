@@ -64,6 +64,10 @@ footer {
 	-webkit-margin-bottom-collapse: separate;
 }
 
+.hidden {
+	display: none;
+}
+
 .score-buttons {
   float: right;
   @media #{$small-only} { letter-spacing: 2px; }
