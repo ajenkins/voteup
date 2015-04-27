@@ -7,20 +7,30 @@ Meteor.methods
       score: 0
       createdAt: new Date
       prevPosition: numOptions
+      newPosition: false
       votes: {}
 
   removeOption: (optionId) ->
     Options.remove optionId
 
   increaseScoreBy: (optionId, increaseBy) ->
+    # Update the option's score
     option = Options.findOne optionId
+    previousPosition = option.prevPosition
     previousScore = option.score
     Options.update optionId, $set: score: previousScore + increaseBy
 
+    # Save the option's new position as the previous position
     poll = Polls.findOne option.pollId
     pollOptions = Options.find pollId: poll._id, {sort: score: -1, prevPosition: 1}
     pollOptions.forEach (pollOption, index) ->
       Options.update pollOption._id, $set: prevPosition: index
+
+    # Mark the option if its position has changed
+    option = Options.findOne optionId
+    newPosition = option.prevPosition
+    if previousPosition isnt newPosition
+      Options.update optionId, $set: newPosition: true
 
   addVotesforUser: (pollId, userId, votes) ->
     pollOptions = Options.find pollId: pollId
