@@ -50,3 +50,6 @@ Meteor.methods
     option = Options.findOne optionId
     option.votes[userId] = vote
     Options.update optionId, $set: votes: option.votes
+
+  optionFinishedMoving: (optionId) ->
+    Options.update optionId, $set: newPosition: false

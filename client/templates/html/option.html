@@ -1,5 +1,5 @@
 <template name="option">
-  <div class="row item">
+  <div class="row item {{#if beginHidden}}hidden{{/if}}" data-option-id={{_id}}>
     <div class="small-6 medium-9 columns">
       <span class="text left">{{value}}</span>
     </div>
