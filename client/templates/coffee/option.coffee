@@ -30,9 +30,18 @@ Template.option.events
 Tracker.autorun ->
   movedOptions = Options.find(newPosition: true).fetch()
   for option in movedOptions
+    if option.moveDirection is 'down'
+      $ghostRow = $('<div class="ghost-row"></div>').prependTo('div#options-parent')
+      $ghostRow.velocity 'slideUp',
+        duration: 1000
+        easing: 'easeOutQuint'
+        queue: false
+        complete: ->
+          $ghostRow.remove()
     $option = $("div[data-option-id='#{option._id}']")
     $option.velocity 'slideDown',
       duration: 1000
       easing: 'easeOutQuint'
-      complete: (elements) ->
+      queue: false
+      complete: ->
         Meteor.call 'optionFinishedMoving', option._id

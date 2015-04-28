@@ -68,6 +68,12 @@ footer {
 	display: none;
 }
 
+.ghost-row {
+	@extend .row.item;
+	height: 44px;
+	visibility: hidden;
+}
+
 .score-buttons {
   float: right;
   @media #{$small-only} { letter-spacing: 2px; }

@@ -8,6 +8,7 @@ Meteor.methods
       createdAt: new Date
       prevPosition: numOptions
       newPosition: false
+      moveDirection: ''
       votes: {}
 
   removeOption: (optionId) ->
@@ -26,11 +27,15 @@ Meteor.methods
     pollOptions.forEach (pollOption, index) ->
       Options.update pollOption._id, $set: prevPosition: index
 
-    # Mark the option if its position has changed
+    # Mark the option if its position has changed and which direction it will move in
     option = Options.findOne optionId
     newPosition = option.prevPosition
     if previousPosition isnt newPosition
       Options.update optionId, $set: newPosition: true
+      if newPosition < previousPosition
+        Options.update optionId, $set: moveDirection: 'up'
+      else
+        Options.update optionId, $set: moveDirection: 'down'
 
   addVotesforUser: (pollId, userId, votes) ->
     pollOptions = Options.find pollId: pollId
@@ -53,3 +58,4 @@ Meteor.methods
 
   optionFinishedMoving: (optionId) ->
     Options.update optionId, $set: newPosition: false
+    Options.update optionId, $set: moveDirection: ''
