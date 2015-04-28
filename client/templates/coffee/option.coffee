@@ -19,7 +19,14 @@ Template.option.helpers
 
 Template.option.events
   'click .delete': (event) ->
-    Meteor.call 'removeOption', @_id
+    optionId = @_id
+    $option = $("div[data-option-id='#{optionId}']")
+    $option.velocity 'slideUp',
+      duration: 1000
+      easing: 'easeOutQuint'
+      queue: false
+      complete: ->
+        Meteor.call 'removeOption', optionId
 
   'click .upvote': (event) ->
     upVote @_id
