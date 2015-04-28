@@ -38,6 +38,14 @@ Tracker.autorun ->
         queue: false
         complete: ->
           $ghostRow.remove()
+    else if option.moveDirection is 'up'
+      $ghostRow = $('<div class="ghost-row"></div>').appendTo('div#options-parent')
+      $ghostRow.velocity 'slideUp',
+        duration: 1000
+        easing: 'easeOutQuint'
+        queue: false
+        complete: ->
+          $ghostRow.remove()
     $option = $("div[data-option-id='#{option._id}']")
     $option.velocity 'slideDown',
       duration: 1000
