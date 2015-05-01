@@ -13,6 +13,8 @@ Template.poll.helpers
     Meteor.userId() is @creator
 
 Template.poll.events
+  'touchstart #title-text': (event) ->
+    event.target.focus()
   'keydown #title-text': (event) ->
     if event.keyCode is 13
       event.target.blur()

@@ -29,11 +29,12 @@ footer {
 	bottom: 0;
 	width: 100%;
   overflow: hidden;
+	padding: 10px;
 }
 
 #footer-text {
   color: $clouds;
-  margin: 10px;
+  margin: 0;
 }
 
 #footer-text a {
