@@ -15,7 +15,7 @@ Template.option.helpers
       false
 
   beginHidden: ->
-    @newPosition
+    @newPosition or @newOption
 
 Template.option.events
   'click .delete': (event) ->
@@ -33,6 +33,17 @@ Template.option.events
 
   'click .downvote': (event) ->
     downVote @_id
+
+Template.option.rendered = ->
+  option = @data
+  if option.newOption
+    $option = $("div[data-option-id='#{option._id}']")
+    $option.velocity 'slideDown',
+      duration: 1000
+      easing: 'easeOutQuint'
+      queue: false
+      complete: ->
+        Meteor.call 'optionFinishedMoving', option._id
 
 Tracker.autorun ->
   movedOptions = Options.find(newPosition: true).fetch()

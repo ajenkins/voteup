@@ -8,6 +8,7 @@ Meteor.methods
       createdAt: new Date
       prevPosition: numOptions
       newPosition: false
+      newOption: true
       moveDirection: ''
       votes: {}
 
@@ -58,4 +59,5 @@ Meteor.methods
 
   optionFinishedMoving: (optionId) ->
     Options.update optionId, $set: newPosition: false
+    Options.update optionId, $set: newOption: false
     Options.update optionId, $set: moveDirection: ''
