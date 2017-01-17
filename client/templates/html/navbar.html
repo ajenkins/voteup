@@ -1,22 +1,21 @@
 <template name="navbar">
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="{{pathFor route='home'}}">VoteUp</a></h1>
-      </li>
-      {{#if showMenuIcon}}
-        <li class="toggle-topbar menu-icon"><a href><span></span></a></li>
-      {{/if}}
-    </ul>
-    <section class="top-bar-section">
-      <ul class="left">
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <h1><a href="{{pathFor route='home'}}">VoteUp</a></h1>
+    </div>
+
+    <div class="top-bar-left">
+      <ul class="menu">
         {{#if currentUser}}
           {{#if pageIsPoll}}
             <li><a href="{{pathFor route='home'}}">Return to polls</a></li>
           {{/if}}
         {{/if}}
       </ul>
-      <ul class="right">
+    </div>
+
+    <div class="top-bar-right">
+      <ul class="menu">
         {{#if currentUser}}
           <li><a href="{{pathFor route='home'}}" id="sign-out">Sign Out</a></li>
         {{else}}
@@ -25,6 +24,6 @@
           {{/if}}
         {{/if}}
       </ul>
-    </section>
-  </nav>
+    </div>
+  </div>
 </template>
