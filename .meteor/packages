@@ -13,7 +13,6 @@ fourseven:scss
 u2622:persistent-session
 accounts-password
 velocityjs:velocityjs
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -26,3 +25,5 @@ reload
 ejson
 spacebars
 check
+standard-minifier-css
+standard-minifier-js
