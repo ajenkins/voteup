@@ -19,3 +19,7 @@ Template.home.events
     pollId = $('#delete-poll-modal').data('pollId')
     Meteor.call 'deletePoll', pollId
     $('#delete-poll-modal').foundation('reveal', 'close');
+
+
+Template.main.onRendered ->
+  $(document).foundation()
