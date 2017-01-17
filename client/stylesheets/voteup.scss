@@ -1,5 +1,7 @@
-@import "client/stylesheets/_settings.scss";
-@import ".meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
+@import "{}/client/stylesheets/_settings.scss";
+@import '{zurb:foundation-sites}/scss/foundation';
+
+@include foundation-everything;
 
 // Colors from flatuicolors.com
 $midnight-blue: #2c3e50;
