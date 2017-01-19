@@ -11,9 +11,9 @@
         {{#each polls}}
           <a href="/polls/{{url}}">
             <div class="row item btn">
-              <span class="link left">{{title}}</span>
+              <span class="link float-left">{{title}}</span>
               {{#if isPollCreator pollId=_id}}
-                <span class="right">
+                <span class="float-right">
                   <span class="badge">OWNER</span>
                   <a href="#" data-open="delete-poll-modal" data-poll-id="{{_id}}">
                     <i class="fa fa-times icon-btn delete"></i>
