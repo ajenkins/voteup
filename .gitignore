@@ -1,3 +1,5 @@
 *.psd
 .DS_Store
 npm-debug.log
+server.key
+server.pass.key
