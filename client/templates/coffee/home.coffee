@@ -21,5 +21,5 @@ Template.home.events
     $('#delete-poll-modal').foundation('reveal', 'close');
 
 
-Template.main.onRendered ->
+Template.home.onRendered ->
   $(document).foundation()
