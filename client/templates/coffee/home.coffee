@@ -15,10 +15,6 @@ Template.home.events
   'click .delete': (event) ->
     pollId = event.target.parentElement.dataset.pollId
     $('#delete-poll-modal').data('pollId', pollId)
-  'click .delete-confirmation': (event) ->
-    pollId = $('#delete-poll-modal').data('pollId')
-    Meteor.call 'deletePoll', pollId
-    $('#delete-poll-modal').foundation('reveal', 'close');
 
 
 Template.home.onRendered ->
