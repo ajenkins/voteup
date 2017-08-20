@@ -1,9 +1,4 @@
 Router.route '/', (->
-  DocHead.setTitle 'VoteUp - Create real-time, dynamic surveys'
-  metaDescription =
-    name: 'description'
-    content: 'Ask a question and share with others to crowdsource ideas. Vote on ideas in real-time to reach a consensus quickly.'
-  DocHead.addMeta(metaDescription)
   @render 'home'
 ), name: 'home'
 
@@ -15,12 +10,10 @@ Router.route '/polls/:id', (->
 ), name: 'poll.view'
 
 Router.route '/privacy', (->
-  DocHead.setTitle 'VoteUp - Privacy Policy'
   @render 'privacyPolicy'
 ), name: 'privacyPolicy'
 
 Router.route '/terms', (->
-  DocHead.setTitle 'VoteUp - Terms and Conditions'
   @render 'termsAndConditions'
 ), name: 'termsAndConditions'
 

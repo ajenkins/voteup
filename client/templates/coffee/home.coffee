@@ -19,3 +19,11 @@ Template.home.events
 
 Template.home.onRendered ->
   $(document).foundation()
+
+
+Template.home.onCreated ->
+  DocHead.setTitle 'VoteUp - Create real-time, dynamic surveys'
+  metaDescription =
+    name: 'description'
+    content: 'Ask a question and share with others to crowdsource ideas. Vote on ideas in real-time to reach a consensus quickly.'
+  DocHead.addMeta(metaDescription)
