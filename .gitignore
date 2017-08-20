@@ -4,3 +4,4 @@ npm-debug.log
 server.key
 server.pass.key
 server.csr
+settings.json
