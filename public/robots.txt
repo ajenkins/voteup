@@ -1,0 +1,14 @@
+User-agent: Googlebot
+Disallow: /polls/
+
+User-agent: Slurp
+Disallow: /polls/
+
+User-agent: bingbot
+Disallow: /polls/
+
+User-agent: DuckDuckBot
+Disallow: /polls/
+
+User-agent: *
+Disallow: /
