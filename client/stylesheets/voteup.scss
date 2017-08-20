@@ -65,17 +65,32 @@ footer {
 	bottom: 0;
 	width: 100%;
   overflow: hidden;
-	padding: 10px;
 }
 
-#footer-text {
+.footer-text {
   color: $clouds;
   margin: 0;
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
-#footer-text a {
-  color: $clouds;
-  text-decoration: underline;
+#footer-main {
+  margin: 10px;
+}
+
+#footer-links {
+  background-color: #1d3235;
+  li {
+    color: #a3a7a7;
+    a {
+      color: $clouds-dark;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+  }
 }
 
 #poll-title {
@@ -195,4 +210,8 @@ p#create-poll-or-login {
 
 a.close {
 	text-decoration: none;
+}
+
+.margin-bottom {
+  margin-bottom: 30px;
 }
