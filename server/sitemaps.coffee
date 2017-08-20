@@ -1,3 +1,4 @@
+sitemaps.config('rootUrl', 'https://voteup.io/')
 sitemaps.add '/sitemap.xml', ->
   [
     {
