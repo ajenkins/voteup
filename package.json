@@ -1,0 +1,21 @@
+{
+  "name": "voteup-io",
+  "version": "1.0.0",
+  "description": "[View live site here](https://www.voteup.io)",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.12.1",
+    "bcrypt": "^5.0.0",
+    "foundation-sites": "^6.6.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajenkins/voteup.git"
+  },
+  "author": "AJ Jenkins",
+  "bugs": {
+    "url": "https://github.com/ajenkins/voteup/issues"
+  },
+  "homepage": "https://github.com/ajenkins/voteup#readme"
+}
