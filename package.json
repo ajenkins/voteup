@@ -6,7 +6,10 @@
   "dependencies": {
     "@babel/runtime": "^7.12.1",
     "bcrypt": "^5.0.0",
-    "foundation-sites": "^6.6.3"
+    "foundation-sites": "^6.6.3",
+    "jquery": "^3.5.1",
+    "meteor-node-stubs": "^1.0.1",
+    "what-input": "^5.2.10"
   },
   "devDependencies": {},
   "repository": {

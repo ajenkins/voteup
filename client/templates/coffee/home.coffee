@@ -1,3 +1,5 @@
+import Foundation from 'foundation-sites'
+
 Template.home.helpers
   polls: ->
     Polls.find participants: Meteor.userId(), {sort: createdAt: -1}
