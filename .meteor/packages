@@ -7,7 +7,6 @@
 fortawesome:fontawesome
 iron:router
 random@1.2.0
-u2622:persistent-session
 accounts-password@1.6.2
 velocityjs:velocityjs
 meteor-base@1.4.0
@@ -32,3 +31,4 @@ dferber:prerender
 coffeescript
 underscore
 fourseven:scss
+cultofcoders:persistent-session
