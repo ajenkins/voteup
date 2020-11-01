@@ -1,7 +1,9 @@
 <template name="option">
   <div class="row item {{#if beginHidden}}hidden{{/if}}" data-option-id={{_id}}>
     <div class="small-6 medium-9 columns">
-      <span class="text float-left">{{value}}</span>
+      <span class="option-value text float-left" contenteditable="true">
+        {{value}}
+      </span>
     </div>
     <span class="score-buttons float-right">
       <strong>({{score}})</strong>

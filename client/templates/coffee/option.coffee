@@ -34,6 +34,18 @@ Template.option.events
   'click .downvote': (event) ->
     downVote @_id
 
+  'keydown .option-value': (event) ->
+    if event.keyCode is 13
+      event.target.blur()
+      false
+
+  'blur .option-value': (event) ->
+    text = event.target.innerHTML
+    if text isnt @value
+      event.target.innerHTML = ''
+    Meteor.call 'updateOptionValue', @_id, text
+    false
+
 Template.option.rendered = ->
   option = @data
   if option.newOption

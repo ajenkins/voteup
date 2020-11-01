@@ -61,3 +61,6 @@ Meteor.methods
     Options.update optionId, $set: newPosition: false
     Options.update optionId, $set: newOption: false
     Options.update optionId, $set: moveDirection: ''
+
+  updateOptionValue: (optionId, newValue) ->
+    Options.update optionId, $set: value: newValue
