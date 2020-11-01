@@ -1,5 +1,5 @@
 @import "{}/client/stylesheets/_settings.scss";
-@import '{zurb:foundation-sites}/scss/foundation';
+@import '{}/node_modules/foundation-sites/scss/foundation';
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -22,7 +22,6 @@
 @include foundation-label;
 @include foundation-media-object;
 @include foundation-menu;
-@include foundation-off-canvas;
 @include foundation-orbit;
 @include foundation-pagination;
 @include foundation-progress-bar;
